@@ -46,12 +46,13 @@ GPT:
 ```bash
 SCons by Steven Knight et al.: SCons: v4.8.1.08661ed4c552323ef3a7f0ff1af38868cbabb05e, Tue, 03 Sep 2024 17:46:32 -0700, by bdbaddog on M1Dog2021 SCons path: ['C:\\Python312\\Lib\\site-packages\\SCons'] Copyright (c) 2001 - 2024 The SCons Foundation ohno
 ```
-他依旧用的是python312。GPT给了几条解决方案，可以问它。但在我这里无一成功，最终删除所有其他版本的python路径（回头记得加回来）。再次scons --version
+他依旧用的是python312。GPT给了几条解决方案，可以问它。但在我这里无一成功，最终删除所有其他版本的python路径（回头记得加回来）。  
+再次scons --version
 ```bash
 SCons by Steven Knight et al.:
         SCons: v4.8.1.08661ed4c552323ef3a7f0ff1af38868cbabb05e, Tue, 03 Sep 2024 17:46:32 -0700, by bdbaddog on M1Dog2021
         SCons path: ['C:\\Users\\Aurora\\AppData\\Local\\Programs\\Python\\Python37\\lib\\site-packages\\SCons']
 Copyright (c) 2001 - 2024 The SCons Foundation
 ```
-Bingo。（但非常不稳定，在之后的编译中，第一次编译依旧会报错找不到scons，但再点一次就不报错了???不确定是不是没有彻底解决此问题，配置Scons path的文件到底在哪里，找到的请告诉我thank u）
+Bingo。（但非常不稳定，在之后的编译中，第一次编译依旧会报错找不到scons，但再点一次就不报错了???不确定是不是没有彻底解决此问题，配置Scons path的文件到底在哪里，找到的请告诉我thank u）  
 10.19更新：重启liteos、清除编译，解决scons报错。
