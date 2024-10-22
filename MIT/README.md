@@ -18,11 +18,12 @@ python --version
  - 保存、返回Liteos。再次查看python版本。此时应该会看到：Python 3.7.6
  - 如果依旧显示的是高版本的python，尝试重启电脑。（一般设置完环境变量是要重启激活的，但我这边不重启也可以。没解决的可以试一下）
 
-猜测原因是电脑以前装过高版本的python解释器，且环境变量优先级高于3.7的，在使用脚本配置环境的时候，相关的package没有装到3.7里，而是下载到了高版本中。所以当换回python37再次编译，收到多个No mudule named "XXX" 报错。一个个装回去就好了。以distutils为例：
+猜测原因是电脑以前装过高版本的python解释器，且环境变量优先级高于3.7的，在使用脚本配置环境的时候，相关的package没有装到3.7里，而是下载到了高版本中。所以当换回python37再次编译，收到多个No module named "XXX" 报错。一个个装回去就好了。以distutils为例：
 
 **如果python版本正确，进行下一步**
 
 **安装distutils**
+
 打开cmd，输入
 ```bash
 curl https://bootstrap.pypa.io/pip/3.7/get-pip.py -o get-pip.py
