@@ -46,7 +46,10 @@ GPT:
 #### Scons
 检查scons --version
 ```bash
-SCons by Steven Knight et al.: SCons: v4.8.1.08661ed4c552323ef3a7f0ff1af38868cbabb05e, Tue, 03 Sep 2024 17:46:32 -0700, by bdbaddog on M1Dog2021 SCons path: ['C:\\Python312\\Lib\\site-packages\\SCons'] Copyright (c) 2001 - 2024 The SCons Foundation ohno
+SCons by Steven Knight et al.:
+        SCons: v4.8.1.08661ed4c552323ef3a7f0ff1af38868cbabb05e, Tue, 03 Sep 2024 17:46:32 -0700, by bdbaddog on M1Dog2021
+        SCons path: ['C:\\Python312\\Lib\\site-packages\\SCons']
+Copyright (c) 2001 - 2024 The SCons Foundation 
 ```
 他依旧用的是python312。GPT给了几条解决方案，可以问它。但在我这里无一成功，最终删除所有其他版本的python路径（回头记得加回来）。  
 再次scons --version
