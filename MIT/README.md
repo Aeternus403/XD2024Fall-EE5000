@@ -61,3 +61,22 @@ Copyright (c) 2001 - 2024 The SCons Foundation
 ```
 Bingo。（但非常不稳定，在之后的编译中，第一次编译依旧会报错找不到scons，但再点一次就不报错了???不确定是不是没有彻底解决此问题，配置Scons path的文件到底在哪里，找到的请告诉我thank u）  
 10.19更新：重启liteos、清除编译，解决scons报错。
+
+### Debug记录
+#### 注意语法！
+- 编译器将函数的定义和调用都判定为声明，一直报错提醒修改。以为是头文件哪里的声明出了问题，对着框架改来改去，最后发现是自己掉了半个括号Orz。。。编译器以为上一个函数定义没结束，当然会把接下来的定义判错了。
+- 别丢分号
+
+#### AdcRead
+烧录后没按任何按键，却快速切换到了倒数第二个功能？怀疑：1、判断按键函数中，按下时所对应的电压错误。2、AdcRead没有成功读取，返回了NULL。
+##### 2
+由于没有调试器，参照wifiiot_errno.h中的错误编码，二分法一个个判定AdcRead返回了什么错误。
+为什么不直接输出在OLED屏？因为代码报错且没改对hh
+确认是0x80001300，对应错误类型：
+```wifiiot_errno.h
+#define WIFI_IOT_ERR_ADC_PARAMETER_WRONG                          0x80001300
+/**
+ * @brief Defines an ADC error code to indicate an invalid channel.
+ *
+ */
+```
